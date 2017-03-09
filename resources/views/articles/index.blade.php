@@ -9,13 +9,14 @@
             <th>TITLE</th>
             <th>OPTIONS</th>
         </tr>
-        @foreach($pages as $page)
+        @foreach($articles as $article)
             <tr>
-                <td>{{ $page->id }}</td>
-                <td>{{ $page->name }}</td>
-                <td> <a class="btn btn-info" href="{{route('pages.edit', $page ->id)}}">Edit</a></td>
+                <td>{{ $article->id }}</td>
+                <td>{{ $article->title  }}</td>
+                <td>{{ $article->categories->name  }}</td>
+                <td> <a class="btn btn-info" href="{{route('articles.edit', $article ->id)}}">Edit</a></td>
                 <td>
-                    <form method="post" action="{{route('pages.destroy', $page ->id)}}">
+                    <form method="post" action="{{route('articles.destroy', $article ->id)}}">
                         <input name="_method" type="hidden" value="DELETE">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-danger"  >Delete</button>
@@ -26,7 +27,7 @@
         @endforeach
     </table>
 
-    {{ $pages->links() }}
+    {{ $articles->links() }}
 
 
 @endsection

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Articles;
 use App\Page;
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class ArticlesController extends Controller
 {
     public function __construct()
     {
@@ -20,8 +21,8 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pages = Page::paginate(10);
-        return view('pages.index', compact ('pages'));
+        $articles = Article::paginate(10);
+        return view('articles.index', compact ('articles'));
     }
 
     /**
@@ -31,8 +32,8 @@ class PagesController extends Controller
      */
     public function create()
     {
-        $articles = Article::all();
-        return view ('pages.create', compact('articles'));
+        $pages = Page::all();
+        return view ('articles.create', compact('pages'));
     }
 
     /**
@@ -43,10 +44,12 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        $page = new Page();
-        $page ->name = $request->input('name');
-        $page->save();
-        return redirect('/pages');
+        $article = new Article();
+        $article ->title = $request->input('title');
+        $article->content = $request->input('content');
+        $article->pages_id = $request->input('categories_id');
+        $article->save();
+        return redirect('/articles');
     }
 
     /**
@@ -69,9 +72,9 @@ class PagesController extends Controller
     public function edit($id)
     {
 
-        $page = Page :: find($id);
+        $article = Article :: find($id);
         $pages = Page::all();
-        return view('pages.edit', compact('page'));
+        return view('articles.edit', compact('articles', 'pages'));
     }
 
     /**
@@ -83,10 +86,12 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $page = Page :: find($id);
-        $page->name = $request->input ('name');
-        $page ->save();
-        return redirect('/pages');
+        $article = Article :: find($id);
+        $article->title = $request->input ('title');
+        $article->content = $request->input ('content');
+        $article->categories_id = $request->input('pages_id');
+        $article ->save();
+        return redirect('/articles');
 
     }
 
@@ -98,9 +103,9 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-        $page = Page::find($id);
-        $page ->delete();
+        $article = Article::find($id);
+        $article ->delete();
 
-        return redirect('/pages');
+        return redirect('/articles');
     }
 }
