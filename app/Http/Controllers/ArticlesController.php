@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use App\Articles;
 use App\Page;
 use Illuminate\Http\Request;
 
@@ -47,7 +46,7 @@ class ArticlesController extends Controller
         $article = new Article();
         $article ->title = $request->input('title');
         $article->content = $request->input('content');
-        $article->pages_id = $request->input('categories_id');
+        $article->pages_id = $request->input('pages_id');
         $article->save();
         return redirect('/articles');
     }
@@ -72,7 +71,7 @@ class ArticlesController extends Controller
     public function edit($id)
     {
 
-        $article = Article :: find($id);
+        $articles = Article :: find($id);
         $pages = Page::all();
         return view('articles.edit', compact('articles', 'pages'));
     }

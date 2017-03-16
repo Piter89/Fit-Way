@@ -9,5 +9,6 @@ class Article extends Model
     public function Pages(){
 
         return $this->belongsTo(Page::class);
+
     }
 }

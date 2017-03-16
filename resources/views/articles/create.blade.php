@@ -12,7 +12,7 @@
         <div class="form-group">
             <select class="form-control" name="pages_id">
                 @foreach($pages as $page)
-                    @if($articles->id == $page->pages_id)
+                    @if($page->id == $page->pages_id)
                         <option selected ="selected" value="{{ $page->id  }}">{{ $page->name }}</option>
                     @else
                         <option value="{{ $page->id  }}">{{ $page->name }}</option>

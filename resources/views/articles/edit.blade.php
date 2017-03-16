@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="{{route('articles.update', $article ->id)}}" method="post">
+    <form action="{{route('articles.update', $articles ->id)}}" method="post">
         <input name="_method" type="hidden" value="PUT">
         {{ csrf_field() }}
         <label>Edytuj stronę</label>
