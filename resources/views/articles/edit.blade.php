@@ -7,12 +7,12 @@
         {{ csrf_field() }}
         <label>Edytuj stronę</label>
 
-        <input type="text" name="title" value = "{{$article->title}}" class="form-control" id="title" placeholder="tytuł strony">
-        <textarea name="content" class="form-control" placeholder="treść strony" rows="3"> {{$article->content}}</textarea>
+        <input type="text" name="title" value = "{{$articles->title}}" class="form-control" id="title" placeholder="tytuł strony">
+        <textarea name="content" class="form-control" placeholder="treść strony" rows="3"> {{$articles->content}}</textarea>
         <div class="form-group">
             <select class="form-control" name="pages_id">
                 @foreach($pages as $page)
-                    @if($page->id == $article->title)
+                    @if($page->id == $articles->title)
                         <option selected ="selected" value="{{ $page->id  }}">{{ $page->name }}</option>
                     @else
                         <option value="{{ $page->id  }}">{{ $page->name }}</option>

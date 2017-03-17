@@ -10,7 +10,7 @@ class ArticlesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');   //-  uruchamia się sama automatycznie
+        $this->middleware('auth');
     }
 
     /**
@@ -88,7 +88,7 @@ class ArticlesController extends Controller
         $article = Article :: find($id);
         $article->title = $request->input ('title');
         $article->content = $request->input ('content');
-        $article->categories_id = $request->input('pages_id');
+        $article->pages_id = $request->input('pages_id');
         $article ->save();
         return redirect('/articles');
 
