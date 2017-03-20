@@ -14,12 +14,11 @@ class CreateUserHasIndicesTable extends Migration
     public function up()
     {
         Schema::create('user_has_indices', function (Blueprint $table) {
-            $table->increments('id');
-            $table->float('body_fat');
-            $table->float('body_fat_weight');
-            $table->integer('endurance');
-            $table->integer('strength');
-            $table->integer('suppleness');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('indices_id');
+            $table->foreign('indices_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
 

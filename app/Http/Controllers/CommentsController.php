@@ -33,7 +33,6 @@ class CommentsController extends Controller
         $comments = new Comment();
         $comments ->user_name = $request->input('user_name');
         $comments->text = $request->input('text');
-        $comments->date = $request->input('date');
         $comments->article_id = $request->input('article_id');
         $comments->save();
         return redirect('/comments');
@@ -51,15 +50,14 @@ class CommentsController extends Controller
     {
         $comments = Comment :: find($id);
         $articles = Article::all();
-        return view('articles.edit', compact('comments', 'articles'));
+        return view('comments.edit', compact('comments','articles'));
     }
 
     public function update(Request $request, $id)
     {
-        $comments =  Article :: find($id);
+        $comments = Comment :: find($id);
         $comments ->user_name = $request->input('user_name');
         $comments->text = $request->input('text');
-        $comments->date = $request->input('date');
         $comments->article_id = $request->input('article_id');
         $comments->save();
         return redirect('/comments');

@@ -7,6 +7,7 @@
         <tr>
             <th>ID</th>
             <th>TITLE</th>
+            <th>TREŚC</th>
             <th>OPTIONS</th>
         </tr>
         @foreach($articles as $article)

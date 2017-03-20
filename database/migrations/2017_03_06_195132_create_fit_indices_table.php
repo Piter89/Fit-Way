@@ -16,9 +16,7 @@ class CreateFitIndicesTable extends Migration
         Schema::create('fit_indices', function (Blueprint $table) {
             $table->increments('id');
             $table->float('body_fat');
-            $table->integer('pulse_1');
-            $table->integer('pulse_2');
-            $table->integer('pulse_3');
+            $table->integer('endurance');
             $table->integer('strength');
             $table->integer('suppleness');
             $table->integer('user_id')->unsigned();

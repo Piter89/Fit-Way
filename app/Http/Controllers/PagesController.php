@@ -69,9 +69,9 @@ class PagesController extends Controller
     public function edit($id)
     {
 
-        $page= Article :: find($id);
-        $pages = Page::all();
-        return view('pages.edit', compact('pages'));
+        $page= Page:: find($id);
+
+        return view('pages.edit', compact('page'));
     }
 
     /**

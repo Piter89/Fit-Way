@@ -18,9 +18,9 @@
                 <td>{{ $comment->text  }}</td>
                 <td>{{ $comment->date  }}</td>
                 <td>{{ $comment->article_id  }}</td>
-                <td> <a class="btn btn-info" href="{{route('articles.edit', $comment ->id)}}">Edit</a></td>
+                <td> <a class="btn btn-info" href="{{route('comments.edit', $comment ->id)}}">Edit</a></td>
                 <td>
-                    <form method="post" action="{{route('articles.destroy', $comment ->id)}}">
+                    <form method="post" action="{{route('comments.destroy', $comment ->id)}}">
                         <input name="_method" type="hidden" value="DELETE">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-danger"  >Delete</button>

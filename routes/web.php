@@ -16,9 +16,13 @@ Route::get('/', function () {
 });
 
 Route::resource('pages','PagesController');
-Route::resource('articles','ArticlesController');
+
+
 Route::resource('articles','ArticlesController');
 Route::resource('comments','CommentsController');
+Route::resource('indices','FitIndicesController');
+Route::resource('data','UserDataController');
+Route::resource('has_indices','UserHasIndicesController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
