@@ -26,3 +26,4 @@ Route::resource('has_indices','UserHasIndicesController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/cms', 'CmsController@index');

@@ -14,14 +14,30 @@ class CreateUserHasIndicesTable extends Migration
     public function up()
     {
         Schema::create('user_has_indices', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('indices_id');
-            $table->foreign('indices_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('indices_id')->unsigned();
+           // $table->foreign('indices_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });
+        Schema::table('user_has_indices', function (Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
 
+        });
+        Schema::table('user_has_indices', function (Blueprint $table) {
+            $table->foreign('indices_id')
+                ->references('id')
+                ->on('fit_indices')
+                ->onDelete('cascade');
+
+
+        });
     }
 
     /**

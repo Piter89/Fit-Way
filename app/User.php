@@ -28,5 +28,15 @@ class User extends Authenticatable
         'password', 'remember_token',
 
     ];
+
+    public function roles() {
+        return $this->belongsToMany(FitIndex::class, 'user_has_indices', 'user_id', 'indices_id')->withTimestamps();
+
+
+    }
+
+
+
 }
+
 

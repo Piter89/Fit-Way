@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    <a class="btn btn-danger" href="{{route('articles.create')}}">Dodaj</a>
     <table class="table table-hover">
         <tr>
             <th>ID</th>
