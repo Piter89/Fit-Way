@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <a class="btn btn-danger" href="{{route('articles.create')}}">Dodaj</a>
+
     <table class="table table-hover">
         <tr>
             <th>ID</th>
             <th>TITLE</th>
             <th>TREŚC</th>
-            <th>OPTIONS</th>
+            <th>ID_KATEGORII</th>
         </tr>
         @foreach($articles as $article)
             <tr>
@@ -27,7 +27,9 @@
 
             </tr>
         @endforeach
-    </table>
+    </table><br>
+    <a class="btn btn-danger" href="{{route('articles.create')}}">Dodaj artykuł</a>
+
 
     {{ $articles->links() }}
 

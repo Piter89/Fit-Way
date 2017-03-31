@@ -33,8 +33,8 @@
 
             </tr>
         @endforeach
-    </table>
-
+    </table><br>
+    <a class="btn btn-danger" href="{{route('data.create')}}">Dodaj dane</a>
     {{ $data->links() }}
 
 

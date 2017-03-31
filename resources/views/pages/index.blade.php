@@ -24,7 +24,8 @@
 
             </tr>
         @endforeach
-    </table>
+    </table><br>
+    <a class="btn btn-danger" href="{{route('pages.create')}}">Dodaj kategorie</a>
 
     {{ $pages->links() }}
 

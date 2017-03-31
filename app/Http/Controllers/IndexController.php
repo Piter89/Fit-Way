@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CmsController extends Controller
+class IndexController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,6 @@ class CmsController extends Controller
      */
     public function index()
     {
-        return view('cms');
+        return view('index');
     }
 }

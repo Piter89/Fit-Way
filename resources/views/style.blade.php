@@ -18,31 +18,47 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<img id="headerImage" src="/css/home.jpg" alt="welcome page">
 <div class="flex-center position-ref full-height">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url('/pages') }}">Kategorie</a>
+                <a class="navbar-brand" href="{{ url('/#') }}">Kategorie</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{url('/articles')}}">Artykuły</a></li>
-                <li><a href="{{url('/comments')}}">Komentarze</a></li>
-                <li><a href="{{url('/users')}}">Użytkownicy</a></li>
-                <li><a href="{{url('/data')}}">Dane użytkownika</a></li>
-                <li><a href="{{url('/indices')}}">Wskaźniki sprawności</a></li>
+                <li><a class="h" href="#">Home</a></li>
+                <li><a class="a" href="#">Społeczność</a></li>
+                <li><a class="s" href="#">Wiedza</a></li>
+                <li><a class="i" href="#">Testy</a></li>
+                <li><a class="b" href="#">Profil</a></li>
+                <li><a class="k" href="#">Kontakt</a></li>
 
             </ul>
         </div>
     </nav>
 
-    <div>
+
 
 
     </div>
 
-<div class="container">
-    @yield('content')
+
+
+<div id="leftcolumn">
+    <h1>fitway.com</h1>
+
+
+
 </div>
+<div id="rightcolumn">
+
+    <aside>
+        <h2>Panel logowania</h2>
+
+    </aside>
+
+</div>
+
 </body>
 </html>

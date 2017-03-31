@@ -35,7 +35,7 @@
             </tr>
         @endforeach
     </table>
-
+    <a class="btn btn-danger" href="{{route('indices.create')}}">Dodaj wskaźniki</a>
     {{ $indices->links() }}
 
 
