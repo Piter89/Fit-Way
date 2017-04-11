@@ -1,3 +1,8 @@
+//Głowna strona serwisu
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -40,7 +45,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('/index')}}">
                 Fit Way
             </a>
         </div>
@@ -48,10 +53,10 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a class="h" href="#">Społeczność</a></li>
-                <li><a class="a" href="#">Wiedza</a></li>
-                <li><a class="s" href="#">Testy</a></li>
-                <li><a class="b" href="#">Kontakt</a></li>
+                <li><a class="h" href="{{url('/community')}}">Społeczność</a></li>
+                <li><a class="a" href="{{url('/knowledge')}}">Wiedza</a></li>
+                <li><a class="s" href="{{url('/tests')}}">Testy</a></li>
+                <li><a class="b" href="{{url('/contact')}}">Kontakt</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -68,11 +73,12 @@
 <div class="site-wrappper">
 
     <!-- .container -->
-    <div class="container site-content">
+    <div class="container">
 
+        <br>
         @yield('content')
-
-    </div><!-- end of .container -->
+        <br>
+    </div>
 
 </div><!-- end of wrapper -->
 

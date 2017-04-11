@@ -25,4 +25,23 @@ class IndexController extends Controller
     {
         return view('index');
     }
+    public function community()
+    {
+        return view('webs.community');
+    }
+
+    public function knowledge()
+    {
+        return view('webs.knowledge');
+    }
+
+    public function tests()
+    {
+        return view('webs.tests');
+    }
+
+    public function contact()
+    {
+        return view('webs.contact');
+    }
 }

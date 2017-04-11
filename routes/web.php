@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::resource('pages','PagesController');
@@ -23,10 +23,14 @@ Route::resource('comments','CommentsController');
 Route::resource('indices','FitIndicesController');
 Route::resource('data','UserDataController');
 Route::resource('has_indices','UserHasIndicesController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/cms', 'CmsController@index');
 Route::get('/index', 'IndexController@index');
-
-
+Route::get('/community', 'IndexController@community');
+Route::get('/knowledge', 'IndexController@knowledge');
+Route::get('/tests', 'IndexController@tests');
+Route::get('/contact', 'IndexController@contact');
