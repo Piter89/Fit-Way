@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 
+
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -10,22 +11,27 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+        public function run()
     {
         $user = new User();
-        $user->username = 'user';
+        $user->name = 'user';
         $user->email = 'user@example.com';
+        $user->sex = 'm';
         $user->password = bcrypt('user');
         $user->save();
         $user = new User();
-        $user->username = 'user2';
+        $user->name = 'user2';
         $user->email = 'user2@example.com';
+        $user->sex = 'm';
         $user->password = bcrypt('user2');
         $user->save();
         $user = new User();
-        $user->username = 'user3';
+        $user->name = 'user3';
         $user->email = 'user3@example.com';
+        $user->sex = 'f';
         $user->password = bcrypt('user3');
         $user->save();
     }
+
+
 }
