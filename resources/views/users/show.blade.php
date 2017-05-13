@@ -10,7 +10,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Dane użytkownika</div>
 
-
+                    <img src="{{ asset('storage/users/' . $user->id . '/avatars/' . $user->avatar) }}" alt="" class="img-responsive">
                     <div class="panel-body text-center">
                         <h2><a href="{{ url('/users/' . $user->id) }}">{{ $user->name }}</a></h2>
 
@@ -23,7 +23,10 @@
                         </p>
                         <p>{{ $user->email }}</p><br>
 
+                        @if ($user->id === Auth::id())
+
                         <a class="btn btn-info" href="{{route('users.edit', $user ->id)}}">Edytuj dane użytkownika</a></td>
+                            @endif
                     </div>
                 </div>
 
